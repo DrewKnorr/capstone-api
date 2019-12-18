@@ -19,7 +19,7 @@ from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
 CORS(app)
-app.config["SQLALCHEMY_DATABASE_URI"]="postgres://dmpacqkqlhbobh:6e02a645cd87366e101caabcdd97a936d576b36aa91181df78e6d1808dfc7f91@ec2-54-235-246-201.compute-1.amazonaws.com:5432/d6m9gkcnumptqv"
+app.config["SQLALCHEMY_DATABASE_URI"]="postgres://fokcqswvoacwjk:0ed441d457d7049d3673557cbb6a93bdd9132545cb85c9a99ed3295ba0b297ea@ec2-107-21-209-1.compute-1.amazonaws.com:5432/ddnnuguma3dfrb"
 
 heroku = Heroku(app)
 db = SQLAlchemy(app)
