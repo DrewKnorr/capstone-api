@@ -13,8 +13,7 @@ flask-sqlalchemy = "*"
 gunicorn = "*"
 psycopg2 = "*"
 flask-mail = "*"
-os = "*"
-update = "*"
+
 
 [requires]
 python_version = "3.7"
