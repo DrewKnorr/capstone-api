@@ -262,7 +262,7 @@ def user_login():
             "role":user.role
             
         })
-    "FAILED")
+    
     return "FAILED"
 
 @app.route("/delete/user/<id>", methods=["DELETE"])
@@ -392,11 +392,8 @@ def post_new_pm_user():
 @app.route("/approve/pm/request/<id>", methods=["PUT"])
 def approve_request(id):
     request = PrintMasterRegisterQueue.query.get(id)
-    request)
     user = db.session.query(Users.id, Users.username, Users.role).filter(Users.username==request.username).first()
-    user)
     user_id = user.id
-    user_id)
     update_user = Users.query.get(user_id)
     update_user.role="print-master"
     db.session.delete(request)
@@ -493,7 +490,6 @@ def get_orders(username):
 
 @app.route("/get/history/<username>" ,methods=["GET"])        
 def get_order_history(username):
-    username)
     orders = db.session.query(
         Orders.id, 
         Orders.username, 
@@ -507,7 +503,7 @@ def get_order_history(username):
         Orders.status,
         Orders.date_of_order
         ).filter(Orders.username==username).all()
-    orders)
+    
     return jsonify(orders)
 
 @app.route("/get/all/orders", methods=["GET"])
@@ -532,7 +528,6 @@ def get_all_orders():
 
 @app.route("/upload/files/<order_num>", methods=["PUT"])
 def upload_files(order_num):
-    order_num)
     target = os.path.join(UPLOAD_FOLDER,order_num)
 
     if not os.path.isdir(target):
@@ -594,7 +589,6 @@ def place_order():
 
 @app.route("/update/order/<id>", methods=["PUT"])
 def update(id):
-    id)
 
     input_data= request
     print_time = input_data.form['print_time']
@@ -607,7 +601,6 @@ def update(id):
     update_order.cost = cost
     update_order.status = status
 
-    update_order)
     db.session.commit()
         
         
@@ -630,7 +623,6 @@ def delete_order(id):
 @app.route("/post/payment", methods=["POST","PUT"])
 def post_payment():
     input_data= request
-    input_data.form)
     f_name = input_data.form['f_name']
     l_name = input_data.form['l_name']
     street_addr =input_data.form['street_addr']
