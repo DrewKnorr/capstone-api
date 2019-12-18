@@ -257,7 +257,6 @@ def user_login():
             return jsonify({"errText":"User Not Found"})
         if user.password != password:
                 return jsonify({"errText":"Usernamne or Password Incorrect"})
-        "AUTH APPROVED")
         return jsonify({
             "username":username,
             "role":user.role
